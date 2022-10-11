@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>MIDTERM | QUESTION 2</TITLE>
+<style>
+input{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+input[type=button]{
+	color: white;
+	background-color: black;
+	border-color: white;
+	border: 1px solid #ccc;
+}
+
+input[type=button]:hover{
+  background-color: blue;
+}
+div {
+  background-color: black;
+  padding: 20px;
+}
+</style>
+<script type="text/javascript">
+
+function fnFahrenheit(){
+	var CelValue=parseFloat(document.simpleForm.cel.value);
+	var displayFah;
+	displayFah=(9/5)*parseFloat(CelValue)+32;
+	document.simpleForm.fah.value=Math.round(displayFah*10)/10;
+}
+function fnCelsius(){
+	var FahValue=document.simpleForm.fah.value;
+	var displayCel;
+	displayCel=(parseFloat(FahValue)-32)*(5/9);
+	document.simpleForm.cel.value=Math.round(displayCel*10)/10;
+}
+function fnReset(){
+	with(document.simpleForm){
+		fah.value="";
+		cel.value="";
+	}
+}
+</script>
+</head>
+<body onload="fnReset()">
+<form name=simpleForm>
+
+<div style="width: 200px;">
+<input type="text" name="fah" value=" " placeholder="Fahrenheit"> <br>
+<input type="button" name="btnCel" value="Convert to Celsius" onclick="fnCelsius()"> <br>
+<input type="button" name="btnFah" value="Convert to Fahrenheit" onclick="fnFahrenheit()"> <br>
+<input type="text" name="cel" value=" " placeholder="Celsius"> <br>
+<input type="button" name="reset" value="Reset Form" onclick="fnReset()" style="background-color: red"> <br>
+</div>
+
+</form>
+</body>
+</html>

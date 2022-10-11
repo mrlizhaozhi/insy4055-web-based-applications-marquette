@@ -1,0 +1,94 @@
+<HTML><HEAD> 
+<style>
+.myButton{
+	color: white;
+	background-color: purple;
+	border-color: white;
+	border: 1px solid #ccc;
+	width: 50px;
+	height: 50px;
+}
+input[type=text]{
+	color: black;
+	background-color: grey;
+	border-color: white;
+	border: 1px solid #ccc;
+	width: 160px;
+	height: 50px;
+	padding: 20px;
+}
+
+div {
+	display: table;
+	background-color: black;
+	padding: 20px;
+}
+</style>
+<SCRIPT language=JavaScript> 
+var cell;
+var NumOne;
+var NumTwo;
+var GetNum;
+var SumNum;
+
+function updateNumber(cell) { 
+	
+	
+	if(document.simpleForm.showWin.value==0){
+		document.simpleForm.showWin.value=cell.value;
+	}
+	else{
+		document.simpleForm.showWin.value=document.simpleForm.showWin.value+cell.value;
+		}
+	GetNum=document.simpleForm.showWin.value;		
+	
+}  
+function clearMemory() { 
+ 	document.simpleForm.showWin.value=0;
+	GetNum=0;
+	SumNum=0;
+	NumOne=0;
+
+} 
+
+function startAdding(){
+
+	NumOne = parseFloat(GetNum,1);
+	GetNum=0;
+	document.simpleForm.showWin.value=GetNum;
+	updateNumber(cell);
+	
+} 
+  
+function computeSum() {
+	
+	NumTwo = parseFloat(GetNum,1);
+	SumNum = NumOne + NumTwo;
+	document.simpleForm.showWin.value=SumNum;
+	
+} 
+</script> 
+</HEAD> 
+<BODY> 
+<FORM name="simpleForm"> 
+
+<div style="width: 160px;">
+
+<INPUT class=myButton TYPE=text NAME="showWin" VALUE="0" SIZE=10 
+align=right><BR> 
+<INPUT class=myButton type=button value="1" onclick="updateNumber(this)"> 
+<INPUT class=myButton type=button value="2" onclick="updateNumber(this)"> 
+<INPUT class=myButton type=button value="3" onclick="updateNumber(this)"> <BR> 
+<INPUT class=myButton type=button value="4" onclick="updateNumber(this)"> 
+<INPUT class=myButton type=button value="5" onclick="updateNumber(this)"> 
+<INPUT class=myButton type=button value="6" onclick="updateNumber(this)"> <BR> 
+<INPUT class=myButton type=button value="7" onclick="updateNumber(this)"> 
+<INPUT class=myButton type=button value="8" onclick="updateNumber(this)"> 
+<INPUT class=myButton type=button value="9" onclick="updateNumber(this)"> <BR> 
+<INPUT class=myButton type=button value="+" onclick="startAdding()"> 
+<INPUT class=myButton type=button value="0" onclick="updateNumber(this)"> 
+<INPUT class=myButton type=button value="=" onclick="computeSum()"><BR>
+<INPUT class=myButton type=button value=" CLEAR " onclick="clearMemory()" style="width: 160px;"> 
+</div>
+
+</form></BODY></HTML> 
