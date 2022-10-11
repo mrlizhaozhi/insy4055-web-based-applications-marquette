@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+<head>
+<script type="text/javascript">
+var myPic=new Array();
+for (i=0; i<4; i++){
+	myPic[i]=new Image();
+}
+
+myPic[0].src="pic/create.gif"
+myPic[1].src="pic/impact.gif"
+myPic[2].src="pic/connect.gif"
+myPic[3].src="pic/belong.gif"
+
+function changeCreate(){
+	document.images[0].src=myPic[0].src;
+}
+
+function changeImpact(){
+	document.images[0].src=myPic[1].src;
+}
+function changeConnect(){
+	document.images(0).src=myPic[2].src;
+}	
+function changeBelong(){
+	document.images(0).src=myPic[3].src;
+}	
+function dodisFirst(){
+	document.images[0].src=myPic[0].src;
+}
+</script>
+</head>
+
+<body onload="dodisFirst()">
+<img src="">
+<form name="simpleForm">
+<input type=button value="CREATE" onclick="changeCreate()">
+<input type=button value="IMPACT" onclick="changeImpact()">
+<input type=button value="CONNECT" onclick="changeConnect()">
+<input type=button value="BELONG" onclick="changeBelong()">
+</form>
+</body>
+</html>

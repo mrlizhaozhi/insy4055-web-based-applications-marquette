@@ -1,0 +1,62 @@
+<!Doctype Html>
+
+<html>
+<head>
+
+<style type="text/css">
+input.myButton{
+background-color: navy;
+color: gold;
+font-size: 0.5in;
+font-family: "courier new", "courier";
+font-weight: bold;
+width: 0.5in;
+height: 0.5in;
+}
+</style>
+
+<script type="text/javascript">
+var cell;
+var trigger="pop";
+function markBox(cell){
+	with (document.simpleForm){
+		if (cell.value==""){
+			cell.value=trigger;
+			changeTrigger();
+		}
+		else{
+			alert("You cannot "+trigger+" a "+cell.value);
+		}	
+	}
+}
+function changeTrigger(){
+		if (trigger=="tart"){
+			trigger="pop";
+		}
+		else{
+			trigger="tart";
+		}
+}
+function fnReset(){
+	with(document.simpleForm){
+		b1.value = "";
+		b2.value = "";
+		b3.value = "";
+		b4.value = "";
+		b5.value = "";
+		trigger = "pop";
+	}
+}
+</script>
+</head>
+<body>
+<form name="simpleForm">
+	<input class="myButton" type="button" name="b1" value="" onclick="markBox(this)">
+	<input class="myButton" type="button" name="b2" value="" onclick="markBox(this)">
+	<input class="myButton" type="button" name="b3" value="" onclick="markBox(this)">
+	<input class="myButton" type="button" name="b4" value="" onclick="markBox(this)">
+	<input class="myButton" type="button" name="b5" value="" onclick="markBox(this)">
+	<input type="button" name="b6" value="Reset" onclick="fnReset()">
+</form>
+</body>
+</html>

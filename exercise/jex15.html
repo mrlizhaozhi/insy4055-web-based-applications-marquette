@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+<head>
+<script type="text/javascript">
+var stopID;
+function fnUpdateTime(){
+	var timeStamp=new Date();
+	var hrs = timeStamp.getHours();
+	var mins = timeStamp.getMinutes();
+	var seconds = timeStamp.getSeconds();
+	if(hrs < 10){
+		hrs = "0" + hrs;
+	}
+	if(mins < 10){
+		mins = "0" + mins;
+	}
+	if(seconds < 10){
+		seconds = "0" + seconds;
+	}
+	displayString = hrs + ":" + mins + ":" + seconds;
+	document.simpleForm.text1.value = displayString;
+}
+function fnStartTime(){
+	stopID=setInterval("fnUpdateTime()", 1000);
+}
+function fnStopTime(){
+	clearInterval(stopID);
+}
+</script>
+</head>
+
+<body>
+<form name=simpleForm>
+This Time is: <input type=text name="text1" value="">
+<input type=button name="b1" value="UPDATE TIME" onclick="fnUpdateTime()">
+<input type=button name="b2" value="START TIME" onclick="fnStartTime()">
+<input type=button name="b3" value="STOP TIME" onclick="fnStopTime()">
+
+</form>
+</body>
+</html>

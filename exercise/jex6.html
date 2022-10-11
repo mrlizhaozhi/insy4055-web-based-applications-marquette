@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<HTML>
+<HEAD>
+<script type="text/javascript">
+	function fnsumup(){
+	if(document.simpleform.numb1.value==""){
+	alert("You need a value in the first box.");
+	}
+	else if(document.simpleform.numb2.value==""){
+	alert("You need a value in the second box.");
+	}
+	else{
+	var numV1=document.simpleform.numb1.value;
+	var numV2=document.simpleform.numb2.value;
+	var num1=parseFloat(numV1);
+	var num2=parseFloat(numV2);
+	sum=num1+num2;
+	document.simpleform.response.value=sum;
+	}
+	}
+	function fnmultiply(){
+	if(document.simpleform.numb1.value==""){
+	alert("You need a value in the first box.");
+	}
+	else if(document.simpleform.numb2.value==""){
+	alert("You need a value in the second box.");
+	}
+	else{
+	var numV1=document.simpleform.numb1.value;
+	var numV2=document.simpleform.numb2.value;
+	var num1=parseFloat(numV1);
+	var num2=parseFloat(numV2);
+	multiply=num1*num2;
+	document.simpleform.response.value=multiply;
+	}
+	}
+	function fnReset(){
+	document.simpleform.numb1.value="";
+	document.simpleform.numb2.value="";
+	document.simpleform.response.value="";
+	}	
+</script>
+</HEAD>
+<BODY>
+<form name=simpleform>
+	<input type="text" name="numb1" size=4/>
+	<input type="text" name="numb2" size=4/>
+	<input type="button" name="button1" value="sum" size=4 onclick="fnsumup()"/>
+	<input type="button" name="button2" value="multiply" size=4 onclick="fnmultiply()"/>
+	<BR>
+	<input type="text" name="response" size=4/>
+	<input type="button" name="button3" value="Reset Form" size=4 onclick="fnReset()"/>
+</form>
+</BODY>
+</HTML>

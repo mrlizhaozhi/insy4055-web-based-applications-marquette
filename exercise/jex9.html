@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+
+<html>
+<link rel="stylesheet" type="text/css" href="jex9.css"/>
+<head>
+<script type="text/javascript">
+
+var trigger="pop";
+function markBox(cell){
+	
+	if (cell.value==""){
+		cell.value=trigger;
+	
+		if (trigger=="tart"){
+			trigger="pop";
+		}
+		else{
+			trigger="tart";
+		}
+	}
+	else{	
+		cell.value == "tart" ? alert("You can't tart a tart!") : alert("You can't pop a pop!");
+	}
+}
+function fnReset(){
+	with(document.simpleForm){
+		b1.value = "";
+		b2.value = "";
+		b3.value = "";
+		b4.value = "";
+		b5.value = "";
+		trigger = "pop";
+	}
+}
+</script>
+</head>
+
+<body>
+<form name="simpleForm">
+	<input class="button" type="button" id="b1" value="" onclick="markBox(this)">
+	<input class="button" type="button" id="b2" value="" onclick="markBox(this)">
+	<input class="button" type="button" id="b3" value="" onclick="markBox(this)">
+	<input class="button" type="button" id="b4" value="" onclick="markBox(this)">
+	<input class="button" type="button" id="b5" value="" onclick="markBox(this)">
+	<input type="button" id="b6" value="Reset" onclick="fnReset()">
+</form>
+</body>
+</html>

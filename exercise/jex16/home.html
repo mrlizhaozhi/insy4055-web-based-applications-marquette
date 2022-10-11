@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<SCRIPT language="JavaScript">
+var roll_in=new Array();
+var roll_out=new Array();
+for(i=0; i<4; i++){
+	roll_in[i]=new Image();
+	roll_out[i]=new Image();
+}
+roll_in[0].src="syllabus.gif";
+roll_in[1].src="lectures.gif";
+roll_in[2].src="readings.gif";
+roll_in[3].src="home.gif";
+
+roll_out[0].src="syllabus_lit.gif";
+roll_out[1].src="lectures_lit.gif";
+roll_out[2].src="readings_lit.gif";
+roll_out[3].src="home_lit.gif";
+
+function change(whichOne){
+	document.images[whichOne+2].src=roll_out[whichOne].src;
+}
+function changeback(whichOne){
+	document.images[whichOne+2].src=roll_in[whichOne].src;
+}
+</SCRIPT>
+</HEAD>
+
+
+<BODY leftmargin="7" topmargin="10" onLoad="done=1;" TEXT="#ffffff"
+BACKGROUND="b5.gif">
+
+<P><!----></P>
+
+<P><TABLE WIDTH="661" BORDER="0" CELLSPACING="2" CELLPADDING="0"
+HEIGHT="138">
+  <TR>
+    <TD WIDTH="100%" ALIGN="RIGHT" HEIGHT="65">
+      <P ALIGN=LEFT>&nbsp;<IMG SRC="marqman.jpg" width=200
+      ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></TD>
+  </TR>
+  <TR>
+    <TD WIDTH="100%" ALIGN="CENTER" HEIGHT="65" VALIGN="BOTTOM">
+      <P ALIGN=RIGHT><FONT COLOR="#000000" SIZE="+2" FACE="Verdana">&nbsp;</FONT><B><FONT
+       COLOR="#400080" SIZE="+2" FACE="Verdana">JavaScript Programming</FONT><FONT
+       COLOR="#000000" SIZE="+2" FACE="Verdana"> </FONT></B><FONT COLOR="#000000"
+       SIZE="+2" FACE="Verdana"><IMG SRC="java.gif" WIDTH="79" HEIGHT="79"
+      ALIGN="MIDDLE" BORDER="0" NATURALSIZEFLAG="3"></FONT></P>
+
+      <P ALIGN=RIGHT><FONT COLOR="#000000" SIZE="-1" FACE="Verdana">This
+      course was developed so that you have some experience<BR>
+      developing and working with web based applications at Marquette<BR></font></P>
+      
+
+<P ALIGN=LEFT VALIGN=BOTTOM>
+<A href=" " onmouseover="change(0)" onmouseout="changeback(0)">
+     <img src="syllabus.gif" border=0 align=bottom></A><BR>
+
+<A href=" " onmouseover="change(1)" onmouseout="changeback(1)">
+     <img src="lectures.gif" border=0 align=bottom></A><BR>
+
+<A href=" " onmouseover="change(2)" onmouseout="changeback(2)">
+     <img src="readings.gif" border=0 align=bottom></A><BR><BR>
+     
+<A href=" " onmouseover="change(3)" onmouseout="changeback(3)">
+     <img src="home.gif" border=0 align=bottom></A><BR>
+</P>
+     
+    </TD> 
+  </TR>
+</TABLE><BR>
+
+</BODY>
+</HTML>

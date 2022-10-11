@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title> Exercise 5B: Form</title>
+</head>
+
+<body>
+
+<form method="post" action="mailto:zhaozhi.li@marquette.edu">
+<fieldset>	
+<legend>Contact Details</legend>
+<table border="0">
+<tr>
+<td>Name:</td>
+<td><input type="text" size="10" maxlength="40" name="name"></td>
+</tr>
+
+<tr>
+<td>Call:</td>
+<td><input type="text" size="10" maxlength="40" name="name"></td>
+</tr>
+
+<tr>
+<td>Email:</td>
+<td><input type="text" size="10" maxlength="40" name="name"></td>
+</tr>
+</table>
+</fieldset>
+</form>
+
+<form method="post" action="mailto:zhaozhi.li@marquette.edu">
+<fieldset>
+<legend>Your Review</legend>
+Would you Visit Again?<br/>
+<input type="radio" value="Yes">Yes
+<input type="radio" value="No">No
+<input type="radio" value="Maybe">Maybe<br/>
+
+How did you rate our service?<br/>
+<input type="radio" value="Excellent">Excellent
+<input type="radio" value="Fair">Fair
+<input type="radio" value="Poor">Poor<br/>
+
+How did you hear about us?
+<select name="source">
+	<option value="Choose One">Choose One</option>
+	<option value="Google Search">Google Search</option>
+	<option value="YELP">YELP</option>
+	<option value="Word of Mouth">Word of Mouth</option>
+	<option value="Others">Others</option>
+</select><br/>
+
+Comments:<br/>
+<textarea rows="12pixels" cols="60pixels" name="comments">
+Enter Comments Here
+</textarea><br/>
+<input type="submit" value="Submit Review">
+</fieldset>
+</form>
+
+</body>
+</html>

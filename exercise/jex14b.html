@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+<head>
+<script type="text/javascript">
+var myPic=new Array();
+var k1;
+var k2;
+var k3;
+var stopID;
+for (i=0; i<7; i++){
+	myPic[i]=new Image();
+}
+
+myPic[0].src="slotMachine/jack1.jpg"
+myPic[1].src="slotMachine/jack2.jpg"
+myPic[2].src="slotMachine/jack3.jpg"
+myPic[3].src="slotMachine/jack4.jpg"
+myPic[4].src="slotMachine/jack5.jpg"
+myPic[5].src="slotMachine/jack6.jpg"
+myPic[6].src="slotMachine/jack7.jpg"
+
+function changeJack1(){
+	document.images[0].src=myPic[0].src;
+}
+function changeJack2(){
+	document.images[0].src=myPic[1].src;
+}
+function changeJack3(){
+	document.images(0).src=myPic[2].src;
+}	
+function changeJack4(){
+	document.images(0).src=myPic[3].src;
+}
+function changeJack5(){
+	document.images(0).src=myPic[4].src;
+}
+function changeJack6(){
+	document.images(0).src=myPic[5].src;
+}
+function changeJack7(){
+	document.images(0).src=myPic[6].src;
+}
+
+	
+function dodisFirst(){
+	k1=Math.round(Math.random()*3);
+	k2=Math.round(Math.random()*3);
+	k3=Math.round(Math.random()*3);
+	document.images[0].src=myPic[k1].src;
+	document.images[1].src=myPic[k2].src;
+	document.images[2].src=myPic[k3].src;
+
+}
+function fnRotateRandom(){
+	stopID=setInterval("dodisFirst()", 1000);
+
+}
+function fnRotateStop(){
+	clearInterval(stopID);
+}
+</script>
+</head>
+
+<body onload="dodisFirst()">
+
+<form name="simpleForm">
+<img src=""><img src=""><img src="">
+<input type=button value="CHANGE RANDOM" onclick="dodisFirst()">
+<input type=button value="ROTATE RANDOM" onclick="fnRotateRandom()">
+<input type=button value="ROTATE STOP" onclick="fnRotateStop()">
+
+</form>
+</body>
+</html>

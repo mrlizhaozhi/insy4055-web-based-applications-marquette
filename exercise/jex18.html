@@ -1,0 +1,69 @@
+<!Doctype html>
+
+<html>
+
+<head>
+<script type="text/javascript">
+var myCar1, myCar2, myCar3;
+Car.counter=0;
+
+function Car(value1, value2, value3){
+	var make=value1;
+	this.model=value2;
+	var year=value3;
+	
+	this.getMake=function(){
+		return make;
+	}
+	this.getModel=function(){
+		return this.model;
+	}
+	this.getYear=function(){
+		return year;
+	}
+	this.changeModel=function(newModel){
+		this.model=newModel;
+	}	
+	this.changeMake=function(newMake){
+		make=newMake;
+	}	
+	this.changeYear=function(newYear){
+		year=newYear;
+	}	
+	shoutHooray=function(){
+		alert("Hooray!");
+	}
+	this.changeCar=function(newMake, newModel, newYear){
+		make=newMake;
+		this.model=newModel;
+		year=newYear;
+	}
+	Car.counter++;
+	alert("Create Car No: "+Car.counter);
+}
+function createAllCar(){
+	myCar1=new Car("Toyota","Camery","2002"); 
+	myCar2=new Car("Honda","Accord","2004");
+	myCar3=new Car("Mazda","Protoge","2000");
+}
+function displayAllCar(){
+	alert(myCar1.getMake()+" "+myCar1.getModel()+" "+myCar1.getYear());
+	alert(myCar2.getMake()+" "+myCar2.getModel()+" "+myCar2.getYear());
+	alert(myCar3.getMake()+" "+myCar3.getModel()+" "+myCar3.getYear());
+	
+	myCar2.changeCar("Honda","Civic","2004");
+	alert(myCar2.getMake()+" "+myCar2.getModel()+" "+myCar2.getYear());
+	
+	myCar3.changeCar("Isuzu","Suzuki","2001");
+	alert(myCar3.getMake()+" "+myCar3.getModel()+" "+myCar3.getYear());
+
+}
+</script>
+</head>
+
+<body>
+<input type=button value="Create Car" onclick="createAllCar()">
+<input type=button value="Tell me more" onclick="displayAllCar()">
+</body>
+
+</html>

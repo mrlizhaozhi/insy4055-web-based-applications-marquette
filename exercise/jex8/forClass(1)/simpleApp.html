@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mortgage App</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+  
+  <script type='text/javascript'>
+  function fnCalc() {
+
+		var valueL = document.simpleform.box1.value;
+		var valueR = document.simpleform.box3.value;
+		var valueN = document.simpleform.box2.value;
+		
+		var L = parseFloat(valueL);
+		var R = parseFloat(valueR);
+		var N = parseFloat(valueN);
+		
+		var Percentage = R/100;
+		var Monthly = Percentage/12;
+		var Payments = N*12;
+		
+		var top = L*Monthly;
+		var par = 1/(1+Monthly);
+		var bot = 1 - Math.pow(par, Payments);
+	
+		
+		var output = top/bot;
+		
+		document.simpleform.displayResult.value = output;
+	}
+  
+  </script>
+  <script src="scripts/jquery-1.8.3.min.js">
+  </script>
+  <script src="scripts/chromeFileProtocolFix.js"></script>
+  <script src="scripts/jquery.mobile-1.3.1.min.js">
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div data-role="page">
+    <div data-role=header>Mortgage App</div>
+    <div data-role="content">
+	
+	  <form name="simpleform">
+      <label for="box1"> Loan Amount: </label>
+      <input type='text' name='box1' id='box1' min='0'
+      max='100' placeholder='Enter loan amount'>
+
+      <label for="box2"> Number of Years: </label>
+      <input type='range' name='box2' id='box2'
+      min='0' max='100'>
+	  
+	  <label for="box3"> Yearly Interest Rate: </label>
+      <input type='text' name='box3' id='box3' min='0'
+      max='100' placeholder='Enter number of years'>
+	  
+	  <input type="button" name="btnCalc" value="Calculate" onclick="fnCalc()">
+	  <label for="displayResult"> Calculate </label>
+      <input type='text' name="displayResult" id="displayResult">
+	  <label for="displayResult2"> RESULT: </label>
+      
+	</form>  
+    </div>
+	
+    <div data-role=footer>
+      <small>
+
+        Cross-platform mobile app demo
+
+      </small>
+    </div>
+  </div>
+</body>
+
+</html>

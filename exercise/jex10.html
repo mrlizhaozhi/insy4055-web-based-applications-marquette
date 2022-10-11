@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<script type="text/javascript">
+function fnGenerate(){
+	for(i=0; i<10; i++){
+		var k=Math.ceil(Math.random()*50);
+		document.simpleForm.elements[i].value=k;
+	}
+}
+function fnReset(){
+	for(i=0; i<10; i++){
+		document.simpleForm.elements[i].value="";}
+}
+</script>
+</head>
+<body>
+<form name="simpleForm">
+	<input type="text" name="b1">
+	<input type="text" name="b2">
+	<input type="text" name="b3">
+	<input type="text" name="b4">
+	<input type="text" name="b5">
+	<input type="text" name="b6">
+	<input type="text" name="b7">
+	<input type="text" name="b8">
+	<input type="text" name="b9">
+	<input type="text" name="b10">
+	
+	<input type="button" name="generate" value="Generate" onclick="fnGenerate()"/>
+	<input type="button" name="reset" value="Reset" onclick="fnReset()"/>
+</form>
+</body>
+</html>

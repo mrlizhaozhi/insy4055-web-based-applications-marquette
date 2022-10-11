@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript">
+	function fnMonthPay(){
+		var valueL = document.simpleform.LoanAmount.value;
+		var valueR = document.simpleform.MonthRate.value;
+		var valueN = document.simpleform.NumberYear.value;
+		
+		var L = parseFloat(valueL);
+		var R = parseFloat(valueR);
+		var N = parseFloat(valueN);
+		
+		var Percentage = R/100;
+		var Monthly = Percentage/12;
+		var Payments = N*12;
+		
+		var top = L*Monthly;
+		var par = 1/(1+Monthly);
+		var bot = 1 - Math.pow(par, Payments);
+	
+		
+		var output = top/bot;
+		
+		document.simpleform.Outcome.value = output;
+	}
+</SCRIPT>
+</HEAD>
+<BODY>
+<form name=simpleform>
+	Loan Amount: <input type="text" name="LoanAmount" size=4/>
+	Yearly Interest Rate:<input type="text" name="MonthRate" size=4/>
+	Number of Years: <input type="text" name="NumberYear" size=4/>
+	<BR>
+	Output: <input type="text" name="Outcome" size=4/>
+	<input type="button" name="Calculate" value="Calculate" size=4 onclick="fnMonthPay()"/>
+</form>
+</BODY>
+</HTML>

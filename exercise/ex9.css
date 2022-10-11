@@ -1,0 +1,74 @@
+div {-moz-box-sizing:border-box;
+	box-sizing:border-box;}
+
+	p {color: black;}
+
+div.topBlock{
+position: absolute;
+top:10px;
+left:10px;
+width:1260px;
+height:80px;
+padding:10px;
+letter-spacing:3px;
+text-align:center;
+font-size:400%;
+font-weight: border;
+color: #c93;
+border-left:1px solid #c93;
+border-right:1px solid #c93;
+border-top:5px solid #c93;
+border-bottom:5px solid #c93;
+background: #0000A0;
+}
+
+div.leftBlock{
+position: absolute;
+top:90px;
+left:10px;
+width:300px;
+height:800px;
+padding:10px;
+letter-spacing:3px;
+text-align:center;
+font-size:100%;
+color: #c93;
+border-left:1px solid #c93;
+border-right:1px solid #c93;
+border-top:5px solid #c93;
+border-bottom:5px solid #c93;
+}
+
+div.midBlock{
+position: absolute;
+top:90px;
+left:310px;
+width:660px;
+height:800px;
+padding:10px;
+letter-spacing:3px;
+text-align:center;
+font-size:200%;
+color: #c93;
+border-left:1px solid #c93;
+border-right:1px solid #c93;
+border-top:5px solid #c93;
+border-bottom:5px solid #c93;
+}
+
+div.rightBlock{
+position: absolute;
+top:90px;
+left:970px;
+width:300px;
+height:800px;
+padding:10px;
+letter-spacing:3px;
+text-align:center;
+font-size:200%;
+color: #c93;
+border-left:1px solid #c93;
+border-right:1px solid #c93;
+border-top:5px solid #c93;
+border-bottom:5px solid #c93;
+}

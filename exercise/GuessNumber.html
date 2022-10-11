@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<script type="text/javascript">
+
+var myNumber;
+function fnGenerate(){
+	myNumber = Math.round(Math.random()*20);
+}
+function fnGuess(){
+	var inputNumber = document.simpleform.txtNumber.value;
+	inputNumber = parseFloat(inputNumber);
+	if(inputNumber < myNumber){
+		alert("The number is too small.");
+	}
+	else if(inputNumber > myNumber){
+		alert("The number is too big.");
+	}
+	else{
+		alert("Ding ding ding!");
+	}
+}
+</script>
+</head>
+
+<body>
+<form name=simpleform>
+<input type="button" name="btnButt1" value="GENERATE" onclick="fnGenerate()"/>
+<input type="button" name="btnButt2" value="SHOW ME" onclick="fnGuess()"/>
+<input type="text" name="txtNumber"/>
+</form>
+</body>
+
+</html>

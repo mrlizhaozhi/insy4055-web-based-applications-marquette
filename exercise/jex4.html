@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<script type="text/javascript">
+
+	var countRed=0;
+	var countBlue=0;
+	function fncountRed(){
+		countRed=countRed+1;
+	}
+
+	function fncountBlue(){
+		countBlue=countBlue+1;
+		
+	}
+	function fntotal(){
+		total=countRed+countBlue;
+		document.simpleform.response.value="Total count: "+total+"Red: "+countRed+"Blue: "+countBlue;
+	}
+	
+	function fnreset(){
+		countRed=0;
+		countBlue=0;
+	}
+</script>
+</head>
+
+<body>
+<form name=simpleform>
+	<input type="button" name="button1" value="RED" onclick="fncountRed()">
+	<input type="button" name="button2" value="BLUE" onclick="fncountBlue()">
+	<input type="button" name="button2" value="TOTAL" onclick="fntotal()">
+	<BR>
+	<textarea name="response" rows=2 cols=27></textarea>
+	<input type="reset" value="Reset" onclick="fnreset()">
+</form>
+
+</body>
+</html>

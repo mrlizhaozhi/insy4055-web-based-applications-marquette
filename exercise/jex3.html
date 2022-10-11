@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<script type="text/javascript">
+	function messageA(){
+		document.form.response.value="You clicked button A!";
+	}
+	
+	function messageB(){
+		document.form.response.value="You clicked button B!";
+	}
+</script>
+</head>
+
+<body>
+<form name=form>
+	<input type="button" name="button1" value="A" onclick="messageA()">
+	<input type="button" name="button2" value="B" onclick="messageB()">
+	<BR>
+	<textarea name="response" rows=2 cols=27></textarea>
+	<input type="reset" value="Reset Form">
+</form>
+
+</body>
+</html>

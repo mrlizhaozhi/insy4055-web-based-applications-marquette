@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html>
+<head>
+<script type="text/javascript">
+var myPic=new Array();
+var k;
+var stopID;
+for (i=0; i<4; i++){
+	myPic[i]=new Image();
+}
+
+myPic[0].src="pic/create.gif"
+myPic[1].src="pic/impact.gif"
+myPic[2].src="pic/connect.gif"
+myPic[3].src="pic/belong.gif"
+
+function changeCreate(){
+	document.images[0].src=myPic[0].src;
+}
+
+function changeImpact(){
+	document.images[0].src=myPic[1].src;
+}
+function changeConnect(){
+	document.images(0).src=myPic[2].src;
+}	
+function changeBelong(){
+	document.images(0).src=myPic[3].src;
+}	
+function dodisFirst(){
+	k=Math.round(Math.random()*3);
+	document.images[0].src=myPic[k].src;
+}
+function fnRotateRandom(){
+	stopID=setInterval("dodisFirst()", 1000)
+}
+function fnRotateStop(){
+	clearInterval(stopID);
+}
+</script>
+</head>
+
+<body onload="dodisFirst()">
+<img src="">
+<form name="simpleForm">
+<input type=button value="CHANGE RANDOM" onclick="dodisFirst()">
+<input type=button value="ROTATE RANDOM" onclick="fnRotateRandom()">
+<input type=button value="ROTATE STOP" onclick="fnRotateStop()">
+
+</form>
+</body>
+</html>

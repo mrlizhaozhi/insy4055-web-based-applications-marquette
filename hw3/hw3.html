@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<script type="text/javascript">
+var trigger="X";
+var xCount=0;
+var oCount=0;
+var NumTie=0;
+var NumMove=0;
+
+function changeBox(cell){
+	if (cell.value==""){
+		cell.value=trigger;
+		NumMove++;
+		
+		if(checkWin()){
+			alert(trigger+" wins!");
+			if(trigger=="X"){
+				xCount++;
+				<!-- NumMove++; -->
+				document.simpleForm.txtNumX.value=xCount;
+			}
+			
+			else{
+				oCount++;
+				<!-- NumMove++; -->
+				document.simpleForm.txtNumO.value=oCount;
+			}
+			fnReset();
+			return;
+		}
+		else if(NumMove==9){
+			alert("The game is tied!");
+			NumTie++;
+			document.simpleForm.txtTie.value=NumTie;
+			fnReset();
+			return;
+		}
+		else{
+			changeSymbol();
+			return;
+		}
+	}
+	else{	
+		alert("Oops, this spot has been taken!");
+	}	
+	
+	<!-- if(checkWin()){ -->
+		<!-- alert(trigger+" wins!"); -->
+		<!-- if(trigger=="X"){ -->
+			<!-- xCount++; -->
+			<!-- NumMove++; -->
+			<!-- document.simpleForm.txtNumX.value=xCount; -->
+		<!-- } -->
+		<!-- else{ -->
+			<!-- oCount++; -->
+			<!-- NumMove++; -->
+			<!-- document.simpleForm.txtNumO.value=oCount; -->
+		<!-- } -->
+		<!-- fnReset(); -->
+		<!-- return; -->
+	<!-- } -->
+	<!-- else if(NumMove==9){ -->
+		<!-- alert("The game is tied!"); -->
+		<!-- NumTie++; -->
+		<!-- document.simpleForm.txtTie.value=NumTie; -->
+		<!-- fnReset(); -->
+		<!-- return; -->
+	<!-- } -->
+	<!-- else{ -->
+		
+		<!-- changeSymbol(); -->
+		<!-- return; -->
+	<!-- } -->
+}
+
+function changeSymbol(){
+	if (trigger=="X"){
+		trigger="O";
+		document.simpleForm.txtMove.value="O"; //this indicates which player to move next.
+	}
+	else{
+		trigger="X";
+		document.simpleForm.txtMove.value="X";
+	}
+}
+
+
+function checkWin(){
+	with(document.simpleForm){
+		// check rows
+		if((b1.value==trigger)&&(b2.value==trigger)&&(b3.value==trigger)){
+			return true;
+		}
+		else if((b4.value==trigger)&&(b5.value==trigger)&&(b6.value==trigger)){
+			return true;
+		}
+		else if((b7.value==trigger)&&(b8.value==trigger)&&(b9.value==trigger)){
+			return true;
+		}
+		// check columns
+		else if((b1.value==trigger)&&(b4.value==trigger)&&(b7.value==trigger)){
+			return true;
+		}
+		else if((b2.value==trigger)&&(b5.value==trigger)&&(b8.value==trigger)){
+			return true;
+		}
+		else if((b3.value==trigger)&&(b6.value==trigger)&&(b9.value==trigger)){
+			return true;	
+		}
+		// check diagonals
+		else if((b1.value==trigger)&&(b5.value==trigger)&&(b9.value==trigger)){
+			return true;
+		}
+		else if((b3.value==trigger)&&(b5.value==trigger)&&(b7.value==trigger)){
+			return true;
+		}	
+		else{
+			return false;
+		}
+	}
+}
+
+
+function fnReset(){
+	NumMove=0;
+	with(document.simpleForm){
+		b1.value = "";
+		b2.value = "";
+		b3.value = "";
+		b4.value = "";
+		b5.value = "";
+		b6.value = "";
+		b7.value = "";
+		b8.value = "";
+		b9.value = "";
+		trigger = "X";
+	}
+}
+
+function fnResetAll(){
+	fnReset();
+	xCount=0;
+	oCount=0;
+	NumTie=0;
+	with(document.simpleForm){
+		txtMove.value="X";
+		txtNumX.value="0";
+		txtNumO.value=="0";
+		txtTie.value="0";
+	}
+}
+</script> 
+
+<style type="text/css">
+input.button{
+	background-color: brown;
+	color:gold;
+	font-size: 200px;
+	font-family:"courier new", "courier";
+	font-weight:bold;
+	width:200px;
+	height:200px;
+}
+</style>
+</head>
+
+<body>
+<form name="simpleForm">
+<table width=200 height=200>
+<tr>
+	<td><input class="button" type="button" name="b1" value="" onclick="changeBox(this)"></td>
+	<td><input class="button" type="button" name="b2" value="" onclick="changeBox(this)"></td>
+	<td><input class="button" type="button" name="b3" value="" onclick="changeBox(this)"></td>
+</tr>
+	
+<tr>
+	<td><input class="button" type="button" name="b4" value="" onclick="changeBox(this)"></td>
+	<td><input class="button" type="button" name="b5" value="" onclick="changeBox(this)"></td>
+	<td><input class="button" type="button" name="b6" value="" onclick="changeBox(this)"></td>
+</tr>
+	
+<tr>
+	<td><input class="button" type="button" name="b7" value="" onclick="changeBox(this)"></td>
+	<td><input class="button" type="button" name="b8" value="" onclick="changeBox(this)"></td>
+	<td><input class="button" type="button" name="b9" value="" onclick="changeBox(this)"></td>
+</tr>
+</table>
+	<input type="button" value="REPLAY GAME" onclick="fnReset()">
+	Current Move <input type="text" name="txtMove" value="">
+	SCORE: 
+	X <input type="text" name="txtNumX" value="">
+	O <input type="text" name="txtNumO" value="">
+	TIE <input type="text" name="txtTie" value="">
+	<input type="button" value="RESET SCORE AND GAME" onclick="fnResetAll()">
+</form>
+
+</body>
+</html>

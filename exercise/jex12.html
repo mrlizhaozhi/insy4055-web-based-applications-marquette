@@ -1,0 +1,41 @@
+<!doctype html>
+<!--Li Zhaozhi is a smart person from a university.-->
+<!--Dr. Ow is a nice IT professional from Marquette University.-->
+
+<html>
+<head>
+<script type="text/JavaScript">
+var Person = ["Li Zhaozhi","Dr. Ow"];
+var Role = ["student","IT professional"];
+var Adj = ["smart","nice"];
+var Place = ["a university","Marquette University"];
+
+Person[0]="Li Zhaozhi"
+Person[1]="Dr. Ow"
+
+Role[0]="person"
+Role[1]="IT professional"
+
+Adj[0]="smart"
+Adj[1]="nice"
+
+Place[0]="a university"
+Place[1]="Marquette University"
+
+function Sentence(){
+	k1=Math.round(Math.random());
+	k2=Math.round(Math.random());
+	k3=Math.round(Math.random());
+	k4=Math.round(Math.random());
+	
+	alert(Person[k1]+" "+"is a "+Adj[k2]+" "+Role[k3]+" from "+Place[k4]+" .");
+}
+</script>
+</head>
+
+<body>
+<form name=simpleForm>
+	<input type=button id=button value="Generate Sentence" onclick="Sentence()">
+</form>
+</body>
+</html>

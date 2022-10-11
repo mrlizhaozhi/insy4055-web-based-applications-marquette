@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+
+<meta charset="UTF-8">
+<head>
+<script type="text/javascript">
+var roll_in=new Array();
+var roll_out=new Array();
+var label= new Array();
+for(i=0; i<6; i++){
+	roll_in[i]=new Image();
+	roll_out[i]=new Image();
+}
+roll_in[0].src="pic/airportsmall2.png";
+roll_in[1].src="pic/templesmall2.png";
+roll_in[2].src="pic/buildingsmall2.png";
+roll_in[3].src="pic/gardensmall2.png";
+roll_in[4].src="pic/lionsmall2.png";
+roll_in[5].src="pic/hotelsmall2.png";
+
+roll_out[0].src="pic/airportsmall.png";
+roll_out[1].src="pic/templesmall.png";
+roll_out[2].src="pic/buildingsmall.png";
+roll_out[3].src="pic/gardensmall.png";
+roll_out[4].src="pic/lionsmall.png";
+roll_out[5].src="pic/hotelsmall.png";
+
+label[0]="Changi Airport";
+label[1]="A Temple";
+label[2]="Traditional Chinese Building";
+label[3]="Garden by the Bay";
+label[4]="Merlion Singapura";
+label[5]="Marina Bay Sands (Singapore)";
+
+function change(whichOne){
+	document.images[0].src=roll_out[whichOne].src;
+	document.simpleForm.label.value=label[whichOne].value;
+
+}
+
+function dodisfirst(){
+	document.images[0].src=roll_out[0].src;
+	document.simpleForm.mingpian.value=label[0].value;
+}
+</script>
+<style type="text/css">
+img{
+	opacity:0.5;
+}
+img:hover{			
+	opacity:1;
+}
+</style>
+</head>
+<body onload="dodisfirst()">
+<form name=simpleForm>
+<h1>Do you miss home? - Singapore 新加坡</h1>
+<TABLE border=1 width=1000 height=600>
+<TR>
+<td width=500 height=600>
+<TABLE border=1 width=500 height=600>
+<TR><TD><img src=" " style="opacity:1"></TD></TR>
+<TR><TD><input type="text" name="mingpian" value=" " size=40px; style="border-width:0px; border:none; font-size: 20pt;"></TD></TR>
+</TABLE>
+</td>
+<TD>
+<TABLE border=1 width=500 height=600>
+<TR>
+<td><A href=" " onmouseover="change(0)">
+     <img src="pic/airportsmall2.png" border=0 align=bottom></A></td>
+<td><A href=" " onmouseover="change(1)">
+     <img src="pic/templesmall2.png" border=0 align=bottom></A></td>
+<td><A href=" " onmouseover="change(2)">
+     <img src="pic/buildingsmall2.png" border=0 align=bottom></A></td>
+</TR>
+<TR>
+<td><A href=" " onmouseover="change(3)">
+     <img src="pic/gardensmall2.png" border=0 align=bottom></A></td>
+<td><A href=" " onmouseover="change(4)">
+     <img src="pic/lionsmall2.png" border=0 align=bottom></A></td>
+<td><A href=" " onmouseover="change(5)">
+     <img src="pic/hotelsmall2.png" border=0 align=bottom></A></td>
+</TR>
+</TABLE>
+</td>
+</TR>
+</TABLE>
+
+</form>
+</body>
+</html>

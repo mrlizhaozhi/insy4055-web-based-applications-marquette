@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" href="origo.css" title="Origo" media="all" />
+	<title>Origo v1.1</title>
+</head>
+
+<body class="light blue smaller freestyle01">
+<div id="layout">
+ 
+	<div class="row smaller">
+		<div class="col c5 smaller">
+			<img src="name.png">
+		</div>
+		
+		<div class="col c7 aligncenter">
+			<p class="slogan"></p>
+		</div>
+	</div>
+  
+	<div class="row">
+		<div class="col c12 aligncenter">
+			<img src="front.jpg" width="960" height="240" alt="" />
+		</div>
+	</div>
+ 
+	<div class="row">
+		<div class="col c2 alignleft">
+			<ul class="menu">
+			<li><a href="college.html">College</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="faculty.php">Faculty</a></li>
+			<li><a href="center.html">Center</a>
+			</li>
+			<li><a href="#">Apply Now</a></li>
+		</ul>
+		</div>
+ 
+		<div class="col c8">
+			<h2></h2>
+<body>
+<table width=auto>
+<tr>
+<td width=300><img src = "Ow.jpg" width=200 height=200></td>
+<td width=500><b><a href = "login.php"><h3 style="font-family: Georgia;">Terence Ow</h3></a><br>Associate Professor</b><br>
+		Dept: Management<br>
+		Office: Straz Hall, 212<br>
+		Phone: (414) 288-5104<br>
+		Email: terence.ow@marquette.edu
+		
+		<br><br><b>Education</b><br>Ph.D. in Business, University of Wisconsin-Madison<br>
+		M.S in Industrial Engineering, University of Wisconsin- Madison<br>
+		MBA, University of Wisconsin- Madison<br>
+		M.S in Computer Science, University of Wisconsin- Madison<br>
+		B.S, University of Wisconsin- Madison
+		</td>
+</tr>
+<!-- <tr> -->
+	<!-- <td rowspan = "2"><img src = "Ow.jpg"></td> -->
+	<!-- <td><b><a href = "login.php">Terence Ow</a><br>Associate Professor</b><br> -->
+		<!-- Dept: Management<br> -->
+		<!-- Office: Straz Hall, 212<br> -->
+		<!-- Phone: (414) 288-5104<br> -->
+		<!-- Email: terence.ow@marquette.edu</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+	<!-- <td><b>Education</b><br>Ph.D. in Business, University of Wisconsin-Madison<br> -->
+		<!-- M.S in Industrial Engineering, University of Wisconsin- Madison<br> -->
+		<!-- MBA, University of Wisconsin- Madison<br> -->
+		<!-- M.S in Computer Science, University of Wisconsin- Madison<br> -->
+		<!-- B.S, University of Wisconsin- Madison</td> -->
+<!-- </tr> -->
+</table><br><br>
+
+<?php
+include("connect.inc.php");
+$conn = mysqli_connect($myLocalHost, $myUserName, $myPassword, $myDB);
+	if (!$conn) {
+		die("Connection failed: ");
+	}
+?>
+<b>Publications</b> <br>
+<?php
+include("connect.inc.php");
+$query1 = "SELECT * FROM items WHERE fac_id = '1' AND category = 'Publication' AND active1 = '1' ORDER BY display_order ";	
+$result1 = mysqli_query($conn, $query1);
+	if (!$result1) {
+		die("cannot process selected query 1");	
+	}
+$num = mysqli_num_rows($result1);
+	if($num>0) {
+		while ($row = mysqli_fetch_assoc($result1)) {
+		echo $row["description"]."<br><br>";
+		}
+	}
+	else{
+			echo "No rows found";
+		}
+?>
+<br><br>
+<b>Conference Presentations</b><br>
+<?php
+include("connect.inc.php");
+$query2 = "SELECT * FROM items WHERE fac_id = '1' AND category = 'Conference Presentations' AND active1 = '1' ORDER BY display_order ";	
+$result2 = mysqli_query($conn, $query2);
+	if (!$result2) {
+		die("cannot process selected query 2");	
+	}
+$num = mysqli_num_rows($result2);
+	if($num>0) {
+		while ($row = mysqli_fetch_assoc($result2)) {
+		echo $row["description"]."<br>";
+		}
+	}
+	else{
+			echo "No rows found";
+		}
+?>
+<br><br>
+<b>Research in Progress</b><br>
+<?php
+include("connect.inc.php");
+$query3 = "SELECT * FROM items WHERE fac_id = '1' AND category = 'Research In Progress' AND active1 = '1' ORDER BY display_order";	
+$result3 = mysqli_query($conn, $query3);
+	if (!$result3) {
+		die("cannot process selected query 3");	
+	}
+$num = mysqli_num_rows($result3);
+	if($num>0) {
+		while ($row = mysqli_fetch_assoc($result3)) {
+		echo $row["description"]."<br>";
+		}
+	}
+	else{
+			echo "No rows found";
+		}
+?>
+<br><br>
+<b>Courses Taught</b> <br>
+<?php
+include("connect.inc.php");
+$query4 = "SELECT * FROM items WHERE fac_id = '1' AND category = 'Courses Taught' AND active1 = '1' ORDER BY display_order";	
+$result4 = mysqli_query($conn, $query4);
+	if (!$result4) {
+		die("cannot process selected query 4");	
+	}
+$num = mysqli_num_rows($result4);
+	if($num>0) {
+		while ($row = mysqli_fetch_assoc($result4)) {
+		echo $row["description"]."<br>";
+		}
+	}
+	else{
+			echo "No rows found";
+		}
+?>
+</body>
+			
+			
+		</div>
+ 
+		<div class="col c2">
+			<h3>Having Trouble?</h3>
+			<p> Try resetting your password or see our Frequently Asked Questions</p>
+			<h3>Links:</h3>
+			<p><a href="#">D2L</a><br />
+			<a href="#">CheckMarq</a><br />
+			<a href="#">Bookmarq</a></p>
+		</div>
+	</div>
+ 
+	<div id="footer" class="row">
+	</div>
+ </div>
+</body>
+</html>
